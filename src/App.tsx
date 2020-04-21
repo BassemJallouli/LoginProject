@@ -1,22 +1,32 @@
-import React, { Fragment, Component } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import Login from './Components/login'; 
-import Logout from './Components/Logout'; 
-
+import * as React from 'react';
 import './App.css';
-import LoginForm from './Components/login';
 
-class App extends Component {
-  render () {
+
+
+export default class App extends React.Component {
+  constructor(props: any) 
+    {
+      super(props);
+          this.state = { color: 'green'}
+      }
+  }
+  
+  componentDidMount (){
+    this.setState({
+      colore: " red"
+    });
+  }
+    render() {
     return (
-    <Switch>
-      
-      <Route exact path="/" component={Login} />
-      <Route exact path="/Logout" component={Logout} />
-
-    </Switch>
+      <React.Fragment>
+          <button onClick={this.changecolor.bind(this, "blue")}>
+              Change
+          </button>
+          <div>
+            {this.StaticRange.message}
+          </div>
+    </React.Fragment>
     );
   }
 }
 
-export default App;
