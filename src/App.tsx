@@ -13,7 +13,7 @@ export default class App extends React.Component {
   
   componentDidMount (){
     this.setState({
-      colore: " red"
+      color: "red"
     });
   }
     render() {
